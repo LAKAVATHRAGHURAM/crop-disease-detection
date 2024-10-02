@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+{{title}}
+{% endblock pagetitle %}
+{% block body %}
+
+<div>
+  <div class="container">
+    <!-- For demo purpose -->
+    <div class="row mb-5 text-center text-white">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>{{title}}🍂</b></h1>
+      </div>
+    </div>
+    <center>
+      <div class="col">
+        <div class="p-3 bg-white shadow rounded-lg" style="width: 30%;">
+          <img src={{image_url}} width="350" height="350">
+        </div>
+      </div>
+    </center>
+    <br>
+    <div class="row">
+      <div class="col mx-auto">
+        <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+          <h5><b>Brief Description :</b></h5>
+          <p id="description-text">{{desc}}</p>
+          <!-- Speak Button -->
+          <button onclick="toggleSpeak('description-text')" class="btn btn-primary" style="float: right;">Speak / Pause</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mx-auto">
+        <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+          <h5><b>Prevent This Plant Disease By following these steps :</b></h5>
+          <p id="prevent-text">{{prevent}}</p>
+          <!-- Speak Button -->
+          <button onclick="toggleSpeak('prevent-text')" class="btn btn-primary" style="float: right;">Speak / Pause</button>
+        </div>
+      </div>
+
+      {% if pred!=4 %}
+      <div class="col mx-auto">
+        <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+          <center>
+            <h5><b>Products :</b></h5>
+            <br>
+            <img src={{simage}} width="300" height="350">
+            <br>
+            <br>
+            <h6>{{sname}}</h6>
+            <a target="_blank" href={{buy_link}}><button type="button" class="btn btn-success"
+                style="background-color: #05380b;">Buy Product</button></a>
+          </center>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<!-- Speech Synthesis Script -->
+<script>
+  var isSpeaking = false;
+  var utterance;
+  var textChunks;
+  var currentChunkIndex = 0;
+
+  function toggleSpeak(elementId) {
+    var text = document.getElementById(elementId).innerText;
+
+    textChunks = text.split('. ');
+
+    if (!isSpeaking) {
+      speakTextChunk();
+    } else {
+      window.speechSynthesis.cancel();
+      isSpeaking = false;
+    }
+  }
+
+  function speakTextChunk() {
+    if (currentChunkIndex < textChunks.length) {
+      var chunk = textChunks[currentChunkIndex];
+      utterance = new SpeechSynthesisUtterance(chunk);
+      window.speechSynthesis.speak(utterance);
+      isSpeaking = true;
+
+      utterance.onend = function () {
+        currentChunkIndex++;
+        if (isSpeaking) {
+          speakTextChunk();
+        }
+      };
+
+      utterance.onpause = function () {
+        isSpeaking = false;
+      };
+    } else {
+      isSpeaking = false;
+      currentChunkIndex = 0;
+    }
+  }
+</script>
+
+{% endblock body %}

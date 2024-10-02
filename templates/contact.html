@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+    Contact Us
+{% endblock pagetitle %}
+
+{% block body %}
+
+<div class="row mb-5 text-center text-white laptop">
+    <div class="col-lg-10 mx-auto">
+        <h1 class="display-4" style="padding-top: 2%; font-weight: 400; color: rgb(4, 54, 4);"><b>📞Contacts📞</b></h1>
+        <p class="lead" style="font-weight: 500; color: black;">For Any Queries & Suggestions Contact Us. We Are Happy To Help.</p>
+    </div>
+</div>
+
+<div class="row p-3">
+    <!-- Contact 1: LAKAVATH RAGHURAM -->
+    <div class="col">
+        <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+            <center>
+                <h3>LAKAVATH RAGHURAM</h3>
+                <p class="lead" style="font-weight: 350;">
+                    Hi, I am LAKAVATH RAGHURAM. A dedicated B.Tech student 
+                    specializing in Computer Science and Engineering at IIIT Kottayam. 
+                    I am also interested in Machine Learning and Deep learning.
+                </p>
+            </center>
+            <div>
+                <h5>Social Media Handles:</h5><br>
+                <a target="_blank" href="mailto:lakavathraghuram28@gmail.com">
+                    <img src="https://image.flaticon.com/icons/png/512/281/281769.png" height="40" width="40">
+                </a> : Mail<br><br>
+                <a target="_blank" href="https://github.com/">
+                    <img src="https://image.flaticon.com/icons/png/512/25/25231.png" height="40" width="40">
+                </a> : GitHub<br><br>
+                <a target="_blank" href="https://www.linkedin.com/in/">
+                    <img src="https://image.flaticon.com/icons/png/512/174/174857.png" height="40" width="40">
+                </a> : LinkedIn<br><br>
+                
+                <!-- WhatsApp Button -->
+                <button id="whatsappButton1" style="background-color: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                    Chat on WhatsApp
+                </button>
+                <div style="width: 200px; height: 200px;margin-left: 320px;margin-top: -280px;">
+                    <img src="https://github.com/LAKAVATHRAGHURAM/photo/blob/main/raghuram.png?raw=true" style="width: 120%; height: 120%;">
+                </div>
+                <br><br>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact 2: PARANJI PUNITH KUMAR -->
+    <div class="col">
+        <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+            <center>
+                <h3>PARANJI PUNITH KUMAR</h3>
+                <p class="lead" style="font-weight: 350;">
+                    Hi, I am PARANJI PUNITH KUMAR. A dedicated B.Tech student specializing in Computer Science and Engineering at IIIT Kottayam. 
+                    My focus is on Cloud Computing and Blockchain.
+                </p>
+            </center>
+            <div>
+                <h5>Social Media Handles:</h5><br>
+                <a target="_blank" href="mailto:punith@gmail.com">
+                    <img src="https://image.flaticon.com/icons/png/512/281/281769.png" height="40" width="40">
+                </a> : Mail<br><br>
+                <a target="_blank" href="https://www.instagram.com/">
+                    <img src="https://image.flaticon.com/icons/png/512/174/174855.png" height="44" width="44">
+                </a> : GitHub<br><br>
+                <a target="_blank" href="https://www.linkedin.com/in/">
+                    <img src="https://image.flaticon.com/icons/png/512/174/174857.png" height="40" width="40">
+                </a> : LinkedIn<br><br>
+                
+                <!-- WhatsApp Button -->
+                <button id="whatsappButton2" style="background-color: #25D366; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+                    Chat on WhatsApp
+                </button>
+                <div style="width: 200px; height: 200px;margin-left: 320px;margin-top: -280px;">
+                    <img src="https://github.com/LAKAVATHRAGHURAM/photo/blob/main/punith.jpg?raw=true" style="width: 120%; height: 120%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script>
+    // Function to handle WhatsApp chat
+    function sendWhatsAppMessage(phoneNumber, message) {
+        var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+        window.open(url, "_blank");
+    }
+
+    // WhatsApp Button Click Event for LAKAVATH RAGHURAM
+    document.getElementById("whatsappButton1").addEventListener("click", function() {
+        var phoneNumber = "918096516968"; // Your WhatsApp number for LAKAVATH RAGHURAM
+        var message = "Hi LAKAVATH RAGHURAM, I would like to connect with you.";
+        sendWhatsAppMessage(phoneNumber, message);
+    });
+
+    // WhatsApp Button Click Event for PARANJI PUNITH KUMAR
+    document.getElementById("whatsappButton2").addEventListener("click", function() {
+        var phoneNumber = "916305384764"; // Your WhatsApp number for PARANJI PUNITH KUMAR +91 6305 384 764
+        var message = "Hi PARANJI PUNITH KUMAR, I would like to connect with you.";
+        sendWhatsAppMessage(phoneNumber, message);
+    }); 
+</script>
+
+{% endblock body %}
