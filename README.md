@@ -61,4 +61,15 @@ The project employs a proven tech stack (Machine Learning) that has demonstrated
 - **AWS**: For cloud infrastructure, storage, and deployment services.
 - **OpenCV**: For advanced image processing and analysis.
 
+## 🛠️ Technologies Used
+| Technology       | Logo                                                                                   |
+|------------------|----------------------------------------------------------------------------------------|
+| **Python**       | ![Python Logo](https://www.python.org/community/logos/python-logo-master-v3.png)     |
+| **TensorFlow**   | ![TensorFlow Logo](https://www.tensorflow.org/images/tf_logo_social.png)            |
+| **Keras**        | ![Keras Logo](https://keras.io/img/keras-logo-small.png)                             |
+| **Flask**        | ![Flask Logo](https://flask.palletsprojects.com/en/2.0.x/_static/flask-logo.png)    |
+| **Django**       | ![Django Logo](https://www.djangoproject.com/m/img/logos/django-logo-positive.png)   |
+| **AWS**          | ![AWS Logo](https://d1.awsstatic.com/logos/aws_logo_smile_1200x630.d2b7bcae43c7d93f8e93e90a9fd48d8e16c73b8c.png) |
+| **OpenCV**       | ![OpenCV Logo](https://opencv.org/wp-content/uploads/2021/06/opencv-logo.png)       |
+
 
